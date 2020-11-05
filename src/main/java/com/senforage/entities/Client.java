@@ -1,6 +1,5 @@
 package com.senforage.entities;
 
-import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Client implements Serializable{
+public class Client {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

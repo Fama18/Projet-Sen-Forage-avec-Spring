@@ -1,6 +1,5 @@
 package com.senforage.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Village implements Serializable{
+public class Village{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
