@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 <meta charset="ISO-8859-1">
 <title>Ajouter un client</title>
@@ -16,10 +16,10 @@
 			<label>Sélectionner un village : </label>
 			<select name="village_id">
 					    		<option>--Sélectionner un village--</option>
-					    		<c:forEach items="${clients}" var="v">
+					    		<c:forEach items="${listV}" var="v">
 					    		<option value="${v.id}">${v.nomFamille}</option>
 					    		</c:forEach>
-			</select>
+			</select> 
 		    <input type="submit" value="ajouter">
 		</pre>
 	</form>
