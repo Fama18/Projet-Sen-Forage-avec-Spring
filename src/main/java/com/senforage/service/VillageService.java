@@ -9,8 +9,8 @@ public interface VillageService {
 	Village saveVillage(Village v);
 	Village updateVillage(Village v);
 	void deleteVillage(Village v);
-	void deleteVillageById(Long id);
-	Village getVillage(Long id);
+	void deleteVillageById(int id);
+	Village getVillage(int id);
 	List<Village> getAllVillages();
 
 }

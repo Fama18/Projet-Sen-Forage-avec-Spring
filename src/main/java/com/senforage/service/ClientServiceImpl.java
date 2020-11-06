@@ -31,13 +31,13 @@ public class ClientServiceImpl implements ClientService{
 	}
 
 	@Override
-	public void deleteClientById(Long id) {
+	public void deleteClientById(int id) {
 		clientRepository.deleteById(id);
 		
 	}
 
 	@Override
-	public Client getClient(Long id) {
+	public Client getClient(int id) {
 		return clientRepository.findById(id).get();
 	}
 

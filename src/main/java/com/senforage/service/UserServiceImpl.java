@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.senforage.entities.User;
+import com.senforage.entities.Village;
 import com.senforage.repos.UserRepository;
 
 @Service
@@ -22,6 +23,10 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
+	}
+	@Override
+	public User getUser(int id) {
+		return userRepository.findById(id).orElse(null);
 	}
 
 }

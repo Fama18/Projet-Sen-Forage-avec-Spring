@@ -16,8 +16,8 @@
 			<label>Sélectionner un village : </label>
 			<select name="village_id">
 					    		<option>--Sélectionner un village--</option>
-					    		<c:forEach items="${listV}" var="v">
-					    		<option value="${v.id}">${v.nomFamille}</option>
+					    		<c:forEach items="${villages}" var="v">
+					    		<option value="${v.id}">${v.nom}</option>
 					    		</c:forEach>
 			</select> 
 		    <input type="submit" value="ajouter">

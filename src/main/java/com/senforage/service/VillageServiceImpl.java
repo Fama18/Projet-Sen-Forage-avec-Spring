@@ -31,13 +31,13 @@ public class VillageServiceImpl implements VillageService{
 	}
 
 	@Override
-	public void deleteVillageById(Long id) {
+	public void deleteVillageById(int id) {
 		villageRepository.deleteById(id);
 		
 	}
 
 	@Override
-	public Village getVillage(Long id) {
+	public Village getVillage(int id) {
 		return villageRepository.findById(id).get();
 	}
 

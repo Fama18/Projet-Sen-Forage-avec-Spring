@@ -9,8 +9,8 @@ public interface ClientService {
 	Client saveClient(Client c);
 	Client updateClient(Client c);
 	void deleteClient(Client c);
-	void deleteClientById(Long id);
-	Client getClient(Long id);
+	void deleteClientById(int id);
+	Client getClient(int id);
 	List<Client> getAllClients();
 
 }
