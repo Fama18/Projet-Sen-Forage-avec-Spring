@@ -41,23 +41,19 @@ public class ClientController {
 	@RequestMapping("/saveClient")
 	public String saveClient(@ModelAttribute("client") Client client,
 			ModelMap modelMap,HttpServletRequest req) throws ParseException {
-		//System.out.println(client.getNomFamille());
-
-		//String nom=client.getNomFamille();
 		client.setVillage(villageService.getVillage(Integer.parseInt(req.getParameter("village_id"))));
 		client.setUser(userService.getUser(4));
 		Client saveClient = clientService.saveClient(client);
 		String msg = "client enregistré avec Id "+saveClient.getId();
 		modelMap.addAttribute("msg", msg);
 		return "client/addClient";
-		//return nom;
 	}
 	
 	@RequestMapping("/ListeClients")
 	public String listeClients(ModelMap modelMap) {
 			List<Client> cls = clientService.getAllClients();
 			modelMap.addAttribute("clients", cls);
-			return "client/listeClients";
+			return "client/listeClient";
 	}
 	
 	@RequestMapping("/supprimerClient")
@@ -66,7 +62,7 @@ public class ClientController {
 			clientService.deleteClientById(id);
 			List<Client> cls = clientService.getAllClients();
 			modelMap.addAttribute("clients", cls);
-			return "client/listeClients";
+			return "client/listeClient";
 	}
 	
 	@RequestMapping("/modifierClient")
