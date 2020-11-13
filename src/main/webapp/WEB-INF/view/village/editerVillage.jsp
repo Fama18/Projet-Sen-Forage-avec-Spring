@@ -14,7 +14,7 @@
 	<br />
   <div class="container">
   <h1 style="text-align:center">Modifier les informations d'un village</h1>
-	<form action="updateVillage" method="post">
+	<form action="Village/updateVillage" method="post">
 		 <div class="form-group">
 		   <label for="nom">Nom du village:</label>
 		   <i class="fas fa-user"></i>

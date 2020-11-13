@@ -29,7 +29,7 @@ public class ClientController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/showCreate")
+	@RequestMapping("/Client/showCreate")
 	public String ShowCreate(ModelMap modelMap) {
 		List<Village> vls = villageService.getAllVillages();
 		modelMap.addAttribute("villages", vls);
@@ -38,7 +38,7 @@ public class ClientController {
 		return "client/addClient";
 	}
 	
-	@RequestMapping("/saveClient")
+	@RequestMapping("/Client/saveClient")
 	public String saveClient(@ModelAttribute("client") Client client,
 			ModelMap modelMap,HttpServletRequest req) throws ParseException {
 		client.setVillage(villageService.getVillage(Integer.parseInt(req.getParameter("village_id"))));
@@ -49,14 +49,14 @@ public class ClientController {
 		return "client/addClient";
 	}
 	
-	@RequestMapping("/ListeClients")
+	@RequestMapping("/Client/ListeClients")
 	public String listeClients(ModelMap modelMap) {
 			List<Client> cls = clientService.getAllClients();
 			modelMap.addAttribute("clients", cls);
 			return "client/listeClient";
 	}
 	
-	@RequestMapping("/supprimerClient")
+	@RequestMapping("/Client/supprimerClient")
 	public String supprimerClient( @RequestParam("id") int id,
 									ModelMap modelMap) {
 			clientService.deleteClientById(id);
@@ -65,7 +65,7 @@ public class ClientController {
 			return "client/listeClient";
 	}
 	
-	@RequestMapping("/modifierClient")
+	@RequestMapping("/Client/modifierClient")
 	public String editerClient( @RequestParam("id") int id,
 									ModelMap modelMap) {
 		Client c = clientService.getClient(id);
@@ -74,7 +74,7 @@ public class ClientController {
 			
 	}
 	
-	@RequestMapping("/updateClient")
+	@RequestMapping("/Client/updateClient")
 	public String updateClient(@ModelAttribute("client") Client client,
             					ModelMap modelMap) throws ParseException {
 		

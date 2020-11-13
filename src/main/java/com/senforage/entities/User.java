@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
@@ -21,11 +22,13 @@ public class User{
 	private String prenom;
 	private String email;
 	private String password;
+	private int etat;
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Client> clients = new ArrayList<Client>();
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Village> villages = new ArrayList<Village>();
-	
+	@ManyToMany
+	private List<Roles> roles = new ArrayList<Roles>();
 	
 	public int getId() {
 		return id;
@@ -57,6 +60,13 @@ public class User{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public int getEtat() {
+		return etat;
+	}
+	public void setEtat(int etat) {
+		this.etat = etat;
+	}
 	public List<Client> getClients() {
 		return clients;
 	}
@@ -87,10 +97,12 @@ public class User{
 	}
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+	public List<Roles> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Roles> roles) {
+		this.roles = roles;
+	}
 
 }

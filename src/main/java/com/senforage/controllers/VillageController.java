@@ -25,14 +25,14 @@ public class VillageController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/showCreateVillage")
+	@RequestMapping("/Village/showCreateVillage")
 	public String ShowCreateVillage(ModelMap modelMap) {
 		List<User> uses = userService.getAllUsers();
 		modelMap.addAttribute("users", uses);
 		return "village/addVillage";
 	}
 	
-	@RequestMapping("/saveVillage")
+	@RequestMapping("/Village/saveVillage")
 	public String saveVillage(@ModelAttribute("village") Village village,
 			ModelMap modelMap,HttpServletRequest req) throws ParseException {
 		village.setUser(userService.getUser(4));
@@ -42,14 +42,14 @@ public class VillageController {
 		return "village/addVillage";
 	}
 	
-	@RequestMapping("/ListeVillages")
+	@RequestMapping("/Village/ListeVillages")
 	public String listeVillages(ModelMap modelMap) {
 			List<Village> vgs = villageService.getAllVillages();
 			modelMap.addAttribute("villages", vgs);
 			return "village/listeVillage";
 	}
 	
-	@RequestMapping("/supprimerVillage")
+	@RequestMapping("/Village/supprimerVillage")
 	public String supprimerVillage( @RequestParam("id") int id,
 									ModelMap modelMap) {
 			villageService.deleteVillageById(id);
@@ -58,7 +58,7 @@ public class VillageController {
 			return "village/listeVillage";
 	}
 	
-	@RequestMapping("/modifierVillage")
+	@RequestMapping("/Village/modifierVillage")
 	public String editerVillage( @RequestParam("id") int id,
 									ModelMap modelMap) {
 		Village v = villageService.getVillage(id);
@@ -67,7 +67,7 @@ public class VillageController {
 			
 	}
 	
-	@RequestMapping("/updateVillage")
+	@RequestMapping("/Village/updateVillage")
 	public String updateVillage(@ModelAttribute("village") Village village,
             					ModelMap modelMap) throws ParseException {
 		

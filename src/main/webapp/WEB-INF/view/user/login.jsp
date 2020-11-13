@@ -14,7 +14,7 @@
 	<br />
   <div class="container">
   <h1 style="text-align:center">Page d'authentification</h1>
-	<form action="Accueil" method="post">
+	<form action="/login" method="post">
 		 <div class="form-group">
 		   <label for="nomFamille">Username:</label>
 		   <i class="fas fa-user"></i>

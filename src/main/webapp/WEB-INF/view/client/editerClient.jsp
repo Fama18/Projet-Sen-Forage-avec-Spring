@@ -14,7 +14,7 @@
 	<br />
   <div class="container">
   <h1 style="text-align:center">Modifier les informations d'un client</h1>
-	<form action="updateClient" method="post">
+	<form action="Client/updateClient" method="post">
 		 <div class="form-group">
 		   <label for="nomFamille">Nom de Famille:</label>
 		   <i class="fas fa-user"></i>

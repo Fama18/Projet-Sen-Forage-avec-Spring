@@ -14,7 +14,7 @@
 	<br />
   <div class="container">
   <h1 style="text-align:center">Inserer un village</h1>
-	<form action="saveVillage" method="post">
+	<form action="Village/saveVillage" method="post">
 		 <div class="form-group">
 		   <label for="nom">Nom du Village:</label>
 		   <i class="fas fa-square"></i>
